@@ -972,3 +972,9 @@ class Any(PrimExpr):
     """
     def __init__(self):
         self.__init_handle_by_constructor__(_ffi_api.Any)
+
+class Expr(ExprOp, Object):
+    """Base class of all tvm Expressions"""
+    # In Python3, We have to explicity tell interpreter to retain __hash__ if we overide __eq__
+    # https://docs.python.org/3.1/reference/datamodel.html#object.__hash__
+    __hash__ = Object.__hash__

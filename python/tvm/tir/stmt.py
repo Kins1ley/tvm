@@ -374,7 +374,14 @@ class LoweredFunc(Object):
     MixedFunc = 0
     HostFunc = 1
     DeviceFunc = 2
-
+	
+#新增内容	
+@tvm._ffi.register_object
+class Partition(Stmt):
+    Complete = 0
+    Block = 1
+    Cyclic = 2
+###
 
 def stmt_seq(*args):
     """Make sequence of statements

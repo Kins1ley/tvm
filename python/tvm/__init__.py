@@ -66,6 +66,10 @@ from . import arith
 # Contrib initializers
 from .contrib import rocm as _rocm, nvcc as _nvcc, sdaccel as _sdaccel
 
+from . import expr_hcl
+from . import stmt_hcl
+from . import make_hcl
+
 # Clean subprocesses when TVM is interrupted
 def tvm_excepthook(exctype, value, trbk):
     print('\n'.join(traceback.format_exception(exctype, value, trbk)))

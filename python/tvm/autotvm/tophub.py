@@ -182,6 +182,7 @@ def download_package(tophub_location, package_name):
                 os.mkdir(path)
 
     download_url = "{0}/{1}".format(tophub_location, package_name)
+    print(download_url)
     logger.info("Download pre-tuned parameters package from %s", download_url)
     download(download_url, os.path.join(rootpath, package_name), True, verbose=0)
 

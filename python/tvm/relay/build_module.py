@@ -413,3 +413,4 @@ def create_executor(kind="debug",
     if kind == "vm":
         return VMExecutor(mod, ctx, target)
     raise RuntimeError("unknown execution strategy: {0}".format(kind))
+

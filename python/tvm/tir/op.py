@@ -23,6 +23,7 @@ from tvm.ir import Array
 from .buffer import Buffer
 from .expr import Call, Var, CommReducer
 from . import _ffi_api
+from tvm.tir import expr as _expr
 
 
 def _pack_buffer(buf):
@@ -360,7 +361,7 @@ def tanh(x):
         The result.
     """
     return call_pure_intrin(x.dtype, "tanh", x)
-
+    #return call_pure_intrin("float64", "tanh", _expr.Cast("float64", x))
 
 def sigmoid(x):
     """Quick function to get sigmoid
@@ -407,6 +408,7 @@ def tan(x):
         The result.
     """
     return call_pure_intrin(x.dtype, "tan", x)
+
 
 
 def cos(x):
